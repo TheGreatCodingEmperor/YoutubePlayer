@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using InMemory.Helpers;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace InMemory.Controllers {
     [ApiController]
@@ -32,9 +33,13 @@ namespace InMemory.Controllers {
         }
 
         [HttpGet("Select")]
-        public async Task<IActionResult> Select([FromQuery] string selector){
+        public async Task<IActionResult> Select([FromQuery] string selector,[FromQuery] int index){
             HtmlHelper htmlHelper = new HtmlHelper(_config);
-            var response = await htmlHelper.select(selector);
+            var result = await htmlHelper.select(selector,index);
+            var response = new List<dynamic>();
+            foreach(var res in result){
+                response.Add(JsonConvert.DeserializeObject<dynamic>(res));
+            }
             return Ok(response);
         }
 

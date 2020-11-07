@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -25,6 +26,7 @@ import { VideoModule } from './views/video/video.module';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     TestModule,
     DashboardModule,
     VideoModule,
