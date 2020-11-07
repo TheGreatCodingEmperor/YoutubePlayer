@@ -1,0 +1,48 @@
+.item{
+    padding:.5em;
+}
+
+li:hover{
+    background-color: rgba(50,50,50,0.3);
+    animation-name: font-big;
+    animation-duration: 0.5s;
+}
+
+.not-choose{
+    background-color:rgba(0, 0, 0, 0.38);
+}
+
+li:active{
+    background-color: red;
+}
+
+@keyframes font-big{
+    from{
+    }
+    to{
+        font-size:1.5vw;
+        font-weight:500;
+    }
+}
+
+.paper{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+    box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9,
+    8px 8px 20px #0001, 5px 5px 6px 0px #0001;
+}
+
+.paper:active {
+    box-shadow: inset -8px -8px 20px #fff9, inset -5px -5px 6px #fff9,
+      inset 8px 8px 20px #0003, inset 5px 5px 6px #0001;
+  }
+.player{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(50,50,50,0.1);
+}
