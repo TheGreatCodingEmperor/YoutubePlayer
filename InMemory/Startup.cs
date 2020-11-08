@@ -43,7 +43,7 @@ namespace InMemory {
 
             dbContext.Database.EnsureCreated();
 
-            app.UseHttpsRedirection ();
+            // app.UseHttpsRedirection ();
             app.UseStaticFiles ();
             if (!env.IsDevelopment ()) {
                 app.UseSpaStaticFiles ();
@@ -70,7 +70,7 @@ namespace InMemory {
 
                 if (env.IsDevelopment ()) {
                     spa.UseProxyToSpaDevelopmentServer ("http://localhost:4200");
-                    spa.UseAngularCliServer (npmScript: "start");
+                    // spa.UseAngularCliServer (npmScript: "start");
                 }
             });
         }
